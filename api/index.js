@@ -4,7 +4,7 @@ export default async function handler(req, res) {
   
   // 2. Vercel 환경 변수에서 숨겨둔 API 키를 불러옵니다.
   const API_KEY = process.env.LASTFM_API_KEY;
-
+  const API_SECRET = process.env.LASTFM_API_SECRET; // 시크릿 키 불러오기
   if (!API_KEY) {
     return res.status(500).json({ error: "API Key is not configured on server" });
   }
